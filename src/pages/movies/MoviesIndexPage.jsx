@@ -7,10 +7,21 @@ export default function MoviesIndexPage() {
     const url = import.meta.env.VITE_BACKEND_URL + `api/movies`;
 
     fetch(url)
-      .then((res) => res.json())
+      .then((res) => {
+        if (!res.ok) {
+          throw new Error(
+            `Errore nella fetch: ${res.status} ${res.statusText}`
+          );
+        }
+        return res.json();
+      })
+
       .then((data) => {
         seMovies(data.movies);
         console.log(data.movies);
+      })
+      .catch((error) => {
+        console.error("Si è verificato un errore durante la fetch:", error);
       });
   }, []);
 
