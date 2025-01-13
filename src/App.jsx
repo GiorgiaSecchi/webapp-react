@@ -7,7 +7,7 @@ import DefaultLayout from "./layouts/DefaultLayout";
 import HomePage from "./pages/HomePage";
 import AboutPage from "./pages/AboutPage";
 import NotFoundPage from "./pages/NotFoundPage";
-import IndexMoviesPage from "./pages/movies/IndexMoviesPage";
+import MoviesIndexPage from "./pages/movies/MoviesIndexPage";
 
 function App() {
   return (
@@ -21,7 +21,7 @@ function App() {
 
           {/* Movies pages */}
           <Route path="movies">
-            <Route index Component={IndexMoviesPage} />
+            <Route index Component={MoviesIndexPage} />
           </Route>
         </Route>
       </Routes>
