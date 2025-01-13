@@ -7,9 +7,10 @@ export default function MoviesIndexPage() {
     const url = "http://localhost:3000/api/movies";
 
     fetch(url)
-      .then()
-      .then((res) => {
-        seMovies(res);
+      .then((res) => res.json())
+      .then((data) => {
+        seMovies(data.movies);
+        console.log(data.movies);
       });
   }, []);
 
@@ -18,7 +19,11 @@ export default function MoviesIndexPage() {
       <div className="container py-5">
         <h1>Movies List</h1>
 
-        {movies}
+        <ul>
+          {movies.map((movie) => (
+            <li key={movie.id}>{movie.title}</li>
+          ))}
+        </ul>
       </div>
     </>
   );
