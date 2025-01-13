@@ -1,10 +1,10 @@
 import { useEffect, useState } from "react";
 
-export default function MoviesIndexPage() {
-  const [movies, seMovies] = useState([]);
+export default function MovieShowPage() {
+  const [movie, setMovie] = useState([]);
 
   useEffect(() => {
-    const url = import.meta.env.VITE_BACKEND_URL + `api/movies`;
+    const url = import.meta.env.VITE_BACKEND_URL + `api/movies/2`;
 
     fetch(url)
       .then((res) => {
@@ -17,8 +17,8 @@ export default function MoviesIndexPage() {
       })
 
       .then((data) => {
-        seMovies(data.movies);
-        console.log(data.movies);
+        setMovie(data.movie);
+        console.log(data.movie);
       })
       .catch((error) => {
         console.error("Si è verificato un errore durante la fetch:", error);
@@ -28,13 +28,9 @@ export default function MoviesIndexPage() {
   return (
     <>
       <div className="container py-5">
-        <h1>Movies List</h1>
+        <h1>Movies Detail</h1>
 
-        <ul>
-          {movies.map((movie) => (
-            <li key={movie.id}>{movie.title}</li>
-          ))}
-        </ul>
+        {movie && <p>{movie.title}</p>}
       </div>
     </>
   );
