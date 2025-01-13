@@ -1,10 +1,12 @@
 import { useEffect, useState } from "react";
+import { useParams } from "react-router-dom";
 
 export default function MovieShowPage() {
+  const movieId = useParams().id;
   const [movie, setMovie] = useState([]);
 
   useEffect(() => {
-    const url = import.meta.env.VITE_BACKEND_URL + `api/movies/2`;
+    const url = import.meta.env.VITE_BACKEND_URL + `api/movies/` + movieId;
 
     fetch(url)
       .then((res) => {
