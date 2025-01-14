@@ -18,13 +18,15 @@ function App() {
           {/* Institutional pages */}
           <Route index Component={HomePage} />
           <Route path="about" Component={AboutPage} />
-          <Route path="*" Component={NotFoundPage} />
 
           {/* Movies pages */}
           <Route path="movies">
             <Route index Component={MovieIndexPage} />
             <Route path=":id" Component={MovieShowPage} />
           </Route>
+
+          {/* Error 404 */}
+          <Route path="*" Component={NotFoundPage} />
         </Route>
       </Routes>
     </BrowserRouter>

@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
+import Card from "../../components/Card";
 
 export default function MovieIndexPage() {
   const [movies, seMovies] = useState([]);
@@ -31,13 +31,21 @@ export default function MovieIndexPage() {
       <div className="container py-5">
         <h1>Movies List</h1>
 
-        <ul>
+        <div className="row g-3">
           {movies.map((movie) => (
-            <li key={movie.id}>
-              <Link to={`/movies/` + movie.id}>{movie.title}</Link>
-            </li>
+            <div className="col-3" key={movie.id}>
+              <Card
+                image={movie.image}
+                title={movie.title}
+                subtitle={movie.director}
+                link={{
+                  to: `/movies` + movie.id,
+                  text: "View more details",
+                }}
+              />
+            </div>
           ))}
-        </ul>
+        </div>
       </div>
     </>
   );
