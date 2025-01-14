@@ -2,18 +2,13 @@ import { Link } from "react-router-dom";
 
 export default function Card({ image, title, subtitle, description, link }) {
   return (
-    <div className="card">
-      {image && <img src="..." className="card-img-top" alt="..." />}
+    <div className="card ">
+      {image && <img src={image} className="card-img-top" alt={title} />}
 
       <div className="card-body">
-        {title && <h5 className="card-title">Card title</h5>}
-        {subtitle && <h5 className="card-title">Card subtitle</h5>}
-        {description && (
-          <p className="card-text">
-            Some quick example text to build on the card title and make up the
-            bulk of the card's content.
-          </p>
-        )}
+        {title && <h5 className="card-title">{title}</h5>}
+        {subtitle && <h6 className="card-subtitle ">{subtitle}</h6>}
+        {description && <p className="card-text">{description}</p>}
 
         {link.to && link.text && (
           <Link to={link.to} className="btn btn-primary">

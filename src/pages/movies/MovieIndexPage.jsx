@@ -31,16 +31,16 @@ export default function MovieIndexPage() {
       <div className="container py-5">
         <h1>Movies List</h1>
 
-        <div className="row g-3">
+        <div className="row row-cols-2 row-cols-sm-2 row-cols-md-3 row-cols-lg-5 g-3">
           {movies.map((movie) => (
-            <div className="col-3" key={movie.id}>
+            <div className="col" key={movie.id}>
               <Card
                 image={movie.image}
                 title={movie.title}
                 subtitle={movie.director}
                 link={{
                   to: `/movies` + movie.id,
-                  text: "View more details",
+                  text: "View more",
                 }}
               />
             </div>
