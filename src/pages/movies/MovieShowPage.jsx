@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { Link } from "react-router-dom";
+import ReviewsList from "../../components/reviews/ReviewsList";
 
 export default function MovieShowPage() {
   const movieId = useParams().id;
@@ -48,7 +49,7 @@ export default function MovieShowPage() {
                 <img
                   src={movie.image}
                   alt={movie.title}
-                  className="img-fluid"
+                  className="img-fluid shadow"
                 />
               </div>
 
@@ -68,6 +69,8 @@ export default function MovieShowPage() {
               </div>
             </div>
           </div>
+
+          <ReviewsList reviews={movie.reviews} />
         </div>
       )}
     </>
