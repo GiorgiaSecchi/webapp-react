@@ -5,7 +5,7 @@ import ReviewsList from "../../components/reviews/ReviewsList";
 
 export default function MovieShowPage() {
   const movieId = useParams().id;
-  const [movie, setMovie] = useState([]);
+  const [movie, setMovie] = useState(null);
 
   useEffect(() => {
     const url = import.meta.env.VITE_BACKEND_URL + `api/movies/` + movieId;
