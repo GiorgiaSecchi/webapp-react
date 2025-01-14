@@ -29,11 +29,18 @@ export default function MovieShowPage() {
 
   return (
     <>
-      <div className="container py-5">
-        <h1>Movies Detail</h1>
+      {movie && (
+        <div className="container py-5">
+          <h1>Movie Detail</h1>
 
-        {movie && <p>{movie.title}</p>}
-      </div>
+          <img src={movie.image} alt={movie.title} />
+          <h2 className="card-title">{movie.title}</h2>
+          <h4 className="card-subtitle ">{movie.director}</h4>
+          <h6 className="card-subtitle ">{movie.release_year}</h6>
+          <h6 className="card-subtitle ">{movie.genre}</h6>
+          <p className="card-text">{movie.abstract}</p>
+        </div>
+      )}
     </>
   );
 }

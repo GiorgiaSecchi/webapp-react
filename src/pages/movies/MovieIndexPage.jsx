@@ -39,8 +39,8 @@ export default function MovieIndexPage() {
                 title={movie.title}
                 subtitle={movie.director}
                 link={{
-                  to: `/movies` + movie.id,
-                  text: "View more",
+                  to: `/movies/` + movie.id,
+                  text: "View detail",
                 }}
               />
             </div>

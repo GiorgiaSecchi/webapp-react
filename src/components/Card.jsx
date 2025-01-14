@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 
 export default function Card({ image, title, subtitle, description, link }) {
   return (
-    <div className="card ">
+    <div className="card w-100">
       {image && <img src={image} className="card-img-top" alt={title} />}
 
       <div className="card-body">
