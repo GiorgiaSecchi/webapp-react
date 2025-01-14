@@ -17,3 +17,13 @@
   width: 100%;
   object-fit: cover;
 }
+
+.avatar {
+  text-align: center;
+  line-height: 30px;
+  height: 30px;
+  width: 30px;
+  border-radius: 50%;
+  background-color: gainsboro;
+  font-size: 15px;
+}

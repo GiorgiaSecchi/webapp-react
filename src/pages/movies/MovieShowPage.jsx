@@ -37,7 +37,7 @@ export default function MovieShowPage() {
             <div className="d-flex justify-content-between align-items-center mb-4 text-uppercase">
               <h1>{movie.title}</h1>
               <Link
-                className="btn btn-outline-secondary text-capitalize"
+                className="btn btn-outline-secondary btn-sm text-capitalize"
                 to="/movies"
               >
                 Back to the movies list
@@ -54,23 +54,27 @@ export default function MovieShowPage() {
               </div>
 
               <div className="col-8">
-                <p className="card-subtitle mb-3 fs-4 ">
+                <p className="card-subtitle mb-2 fs-4 ">
                   Directed by:{" "}
                   <span className="fw-medium">{movie.director}</span>
                 </p>
-                <p className="card-subtitle mb-3 fs-5">
+                <p className="card-subtitle mb-2 fs-5">
                   Year: <span className="fw-medium">{movie.release_year}</span>
                 </p>
-                <p className="card-subtitle mb-5 fs-5">
+                <p className="card-subtitle mb-4 fs-5">
                   Genre: <span className="fw-medium">{movie.genre}</span>
                 </p>
-                <p className="card-text mb-5 fst-italic ">{movie.abstract}</p>
+                <p className="card-text mb-4 py-2 fst-italic ">
+                  {movie.abstract}
+                </p>
                 <button className="btn btn-primary">WATCH NOW</button>
+                <hr />
+                <div>
+                  <ReviewsList reviews={movie.reviews} />
+                </div>
               </div>
             </div>
           </div>
-
-          <ReviewsList reviews={movie.reviews} />
         </div>
       )}
     </>
