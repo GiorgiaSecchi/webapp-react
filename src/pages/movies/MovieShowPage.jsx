@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 export default function MovieShowPage() {
   const movieId = useParams().id;
@@ -31,14 +32,42 @@ export default function MovieShowPage() {
     <>
       {movie && (
         <div className="container py-5">
-          <h1>Movie Detail</h1>
+          <div>
+            <div className="d-flex justify-content-between align-items-center mb-4 text-uppercase">
+              <h1>{movie.title}</h1>
+              <Link
+                className="btn btn-outline-secondary text-capitalize"
+                to="/movies"
+              >
+                Back to the movies list
+              </Link>
+            </div>
 
-          <img src={movie.image} alt={movie.title} />
-          <h2 className="card-title">{movie.title}</h2>
-          <h4 className="card-subtitle ">{movie.director}</h4>
-          <h6 className="card-subtitle ">{movie.release_year}</h6>
-          <h6 className="card-subtitle ">{movie.genre}</h6>
-          <p className="card-text">{movie.abstract}</p>
+            <div className="row">
+              <div className="col-4">
+                <img
+                  src={movie.image}
+                  alt={movie.title}
+                  className="img-fluid"
+                />
+              </div>
+
+              <div className="col-8">
+                <p className="card-subtitle mb-3 fs-4 ">
+                  Directed by:{" "}
+                  <span className="fw-medium">{movie.director}</span>
+                </p>
+                <p className="card-subtitle mb-3 fs-5">
+                  Year: <span className="fw-medium">{movie.release_year}</span>
+                </p>
+                <p className="card-subtitle mb-5 fs-5">
+                  Genre: <span className="fw-medium">{movie.genre}</span>
+                </p>
+                <p className="card-text mb-5 fst-italic ">{movie.abstract}</p>
+                <button className="btn btn-primary">WATCH NOW</button>
+              </div>
+            </div>
+          </div>
         </div>
       )}
     </>
