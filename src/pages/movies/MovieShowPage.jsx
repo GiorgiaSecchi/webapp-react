@@ -73,7 +73,7 @@ export default function MovieShowPage() {
                 <hr />
 
                 <div className="my-4">
-                  <h5 className="mb-4">ADD YOUR REVIEW ON THIS MOVIE: </h5>
+                  <h6 className="mb-4">ADD YOUR REVIEW ON THIS MOVIE: </h6>
                   <ReviewsForm movieId={movieId} />
                 </div>
                 <hr />
