@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { Link } from "react-router-dom";
 import ReviewsList from "../../components/reviews/ReviewsList";
+import ReviewsForm from "../../components/reviews/ReviewsForm";
 
 export default function MovieShowPage() {
   const movieId = useParams().id;
@@ -68,6 +69,13 @@ export default function MovieShowPage() {
                   {movie.abstract}
                 </p>
                 <button className="btn btn-primary">WATCH NOW</button>
+
+                <hr />
+
+                <div className="my-4">
+                  <h5 className="mb-4">ADD YOUR REVIEW ON THIS MOVIE: </h5>
+                  <ReviewsForm movieId={movieId} />
+                </div>
                 <hr />
                 <div>
                   <ReviewsList reviews={movie.reviews} />
