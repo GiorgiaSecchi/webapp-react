@@ -27,8 +27,10 @@ export default function ReviewsItem({ review }) {
           <span key={index}>{star}</span>
         ))}
       </div>
-      <div>{review.name}</div>
-      <div>{review.text}</div>
+      <div>
+        <strong>{review.name}</strong>
+      </div>
+      <div>"{review.text}"</div>
       <div>{review.created_at}</div>
     </div>
   );
