@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import Card from "../../components/Card";
 
 export default function MovieIndexPage() {
-  const [movies, seMovies] = useState([]);
+  const [movies, setMovies] = useState([]);
 
   useEffect(() => {
     const url = import.meta.env.VITE_BACKEND_URL + `api/movies`;
@@ -18,7 +18,7 @@ export default function MovieIndexPage() {
       })
 
       .then((data) => {
-        seMovies(data.movies);
+        setMovies(data.movies);
         console.log(data.movies);
       })
       .catch((error) => {
@@ -29,7 +29,9 @@ export default function MovieIndexPage() {
   return (
     <>
       <div className="container py-5">
-        <h1>Movies List</h1>
+        <div className="mb-5">
+          <h1>Movies List</h1>
+        </div>
 
         <div className="row row-cols-2 row-cols-sm-2 row-cols-md-3 row-cols-lg-5 g-3">
           {movies.map((movie) => (

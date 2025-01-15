@@ -22,12 +22,12 @@ export default function ReviewsItem({ review }) {
       <div>
         <div className="avatar">{review.name[0]}</div>
       </div>
-      <div>{review.name}</div>
       <div>
         {generateStars(review.vote).map((star, index) => (
           <span key={index}>{star}</span>
         ))}
       </div>
+      <div>{review.name}</div>
       <div>{review.text}</div>
       <div>{review.created_at}</div>
     </div>
