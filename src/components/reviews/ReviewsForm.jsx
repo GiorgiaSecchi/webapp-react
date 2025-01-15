@@ -3,7 +3,7 @@ export default function ReviewsForm({ movieId }) {
     import.meta.env.VITE_BACKEND_URL + `api/movies/` + movieId;
 
   return (
-    <form className="row  g-3">
+    <form className="row  g-3 align-items-end">
       <div className="col">
         <label htmlFor="name" className="form-label">
           Name
@@ -36,6 +36,9 @@ export default function ReviewsForm({ movieId }) {
           placeholder="Type here..."
           aria-label="text"
         />
+      </div>
+      <div className="col">
+        <button className="btn btn-secondary">Invia</button>
       </div>
     </form>
   );

@@ -68,7 +68,7 @@ export default function MovieShowPage() {
                 <p className="card-text mb-4 py-2 fst-italic ">
                   {movie.abstract}
                 </p>
-                <button className="btn btn-primary">WATCH NOW</button>
+                <button className="btn btn-primary mb-3">WATCH NOW</button>
 
                 <hr />
 
